@@ -4,7 +4,7 @@ Reproducibility package for the working paper **From Word Counts to Context:
 Topic Models for Asset Pricing** by Kevin Foley, Jonathan Hartadi, Shivesh
 Prakash, and Swapnil Vatsal (UC Berkeley, 2026).
 
-**[Read the paper](main.pdf)** · **[Run the pipeline](#running-the-main-model)** ·
+**[Read the paper](main.pdf)** · **[Project Webpage](https://shivesh777.github.io/bert_lda/)** · **[Run the pipeline](#running-the-main-model)** ·
 **[Verify the archived results](#what-is-included)**
 
 ![End-to-end narrative asset-pricing pipeline](assets/figure1_pipeline.png)
