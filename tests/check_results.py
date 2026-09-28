@@ -1,0 +1,145 @@
+"""Consistency check of the stored results (no data or model runs needed).
+
+    python tests/check_results.py
+
+For every stored fit: theta_daily has 3,285 days x L with rows summing to
+one, phi is L x 15,000 with rows summing to one, the labels equal the top
+three phi terms under the matching vocabulary, and the coherence file has
+one score per topic. For the sweep fits the NPMI mean and top-10 diversity
+are recomputed and compared with ablation/results/sweep_summary.json, and
+st_spherical shares centroids and attention with st_spherical_soft. For
+every pricing run the OOS Sharpe ratio is recomputed from the stored
+monthly returns and compared with its summary and with the README tables.
+"""
+from pathlib import Path
+import json
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+import numpy as np
+import pandas as pd
+
+from src.evaluation import sharpe
+
+RESULTS = ROOT / "results"
+ABL = ROOT / "ablation" / "results"
+N_DAYS, V = 3285, 15000
+SWEEP_L = (50, 60, 70, 80)
+SWEEP_ARMS = ("lda", "st_spherical_soft", "st_spherical")
+
+# values reported in the paper (README tables)
+REPORTED = {
+    RESULTS / "summary_lda_total.json": -0.0810,
+    RESULTS / "summary_st_frozen_total.json": 0.3059,
+    RESULTS / "multihorizon_st_frozen/summary.json": 0.6605,
+    RESULTS / "multihorizon_st_spherical/summary.json": 1.0334,
+    ABL / "pricing_L80/multihorizon_st_spherical_L80/summary.json": 0.7156,
+    ABL / "pricing_L80/multihorizon_lda_L80/summary.json": 0.6125,
+    ABL / "pricing_L80/summary_st_spherical_L80_total.json": 0.7219,
+    ABL / "pricing_L80/summary_lda_L80_total.json": 0.7675,
+    ABL / "pricing_L80/summary_st_spherical_L80_excess.json": 0.6412,
+    ABL / "pricing_L80/summary_lda_L80_excess.json": 0.6470,
+}
+
+failures = []
+
+
+def check(ok, message):
+    if not ok:
+        failures.append(message)
+    print(("ok   " if ok else "FAIL ") + message)
+
+
+def check_fit(variant, L, vocab, coherence, sweep_row=None):
+    theta = pd.read_parquet(RESULTS / f"theta_daily_{variant}.parquet")
+    cols = [c for c in theta.columns if c != "date"]
+    X = theta[cols].to_numpy()
+    phi = np.load(RESULTS / f"phi_{variant}.npy")
+    labels = json.load(open(RESULTS / f"labels_{variant}.json"))
+    meta = json.load(open(RESULTS / f"meta_{variant}.json"))
+
+    check(X.shape == (N_DAYS, L) and np.allclose(X.sum(1), 1, atol=1e-4) and X.min() >= 0,
+          f"{variant}: theta {X.shape}, rows sum to one")
+    check(phi.shape == (L, V) and np.allclose(phi.sum(1), 1, atol=1e-4),
+          f"{variant}: phi {phi.shape}, rows sum to one")
+    rebuilt = [" / ".join(vocab[i] for i in np.argsort(phi[l])[::-1][:3]) for l in range(L)]
+    check(rebuilt == labels, f"{variant}: {L} labels match top phi terms")
+    check(meta.get("L") == L and meta.get("variant") == variant, f"{variant}: meta")
+    check(len(coherence.get(variant, [])) == L, f"{variant}: {L} NPMI scores")
+
+    if sweep_row is not None:
+        top = np.argpartition(phi, -10, axis=1)[:, -10:]
+        diversity = len(np.unique(top)) / top.size
+        npmi = float(np.mean(coherence[variant]))
+        check(abs(npmi - sweep_row["npmi_mean"]) < 1e-6 and
+              abs(diversity - sweep_row["diversity_top10"]) < 1e-6,
+              f"{variant}: mean NPMI {npmi:.4f}, diversity {diversity:.3f} match sweep summary")
+    if variant.startswith("st_spherical_L"):
+        soft = variant.replace("st_spherical_", "st_spherical_soft_")
+        c1 = np.load(RESULTS / f"centroids_{variant}.npy")
+        c2 = np.load(RESULTS / f"centroids_{soft}.npy")
+        t2 = pd.read_parquet(RESULTS / f"theta_daily_{soft}.parquet")[cols].to_numpy()
+        check(np.allclose(c1, c2, atol=1e-6) and np.allclose(X, t2),
+              f"{variant}: same centroids and attention as {soft}")
+
+
+def check_pricing(summary_path, oos_path, reported=None):
+    summary = json.load(open(summary_path))
+    oos = pd.read_parquet(oos_path).iloc[:, 0]
+    s = sharpe(oos)
+    ok = abs(s - summary["oos_sharpe_nf"]) < 1e-6 and len(oos) == summary["oos_months"] == 41
+    if reported is not None:
+        ok = ok and abs(round(s, 4) - reported) < 1e-9
+    check(ok, f"{oos_path.relative_to(ROOT)}: OOS Sharpe {s:.4f} over {len(oos)} months")
+
+
+def main():
+    vocab_main = json.load(open(ROOT / "data" / "vocab.json"))
+    vocab_abl = json.load(open(ROOT / "data" / "vocab_ablation.json"))
+    coherence = json.load(open(RESULTS / "coherence.json"))
+    sweep = {r["variant"]: r for r in
+             json.load(open(ABL / "sweep_summary.json"))["rows"]}
+
+    print("main runs (L = 60)")
+    for variant in ("lda", "st_frozen"):
+        check_fit(variant, 60, vocab_main, coherence)
+    for variant in ("st_spherical_soft", "st_spherical"):
+        check(len(coherence[variant]) == 60 and
+              len(json.load(open(RESULTS / f"labels_{variant}.json"))) == 60,
+              f"{variant}: 60 labels and NPMI scores (weights regenerated by run_main.py)")
+    check_pricing(RESULTS / "summary_lda_total.json", RESULTS / "oos_lda_total.parquet",
+                  REPORTED[RESULTS / "summary_lda_total.json"])
+    check_pricing(RESULTS / "summary_st_frozen_total.json", RESULTS / "oos_st_frozen_total.parquet",
+                  REPORTED[RESULTS / "summary_st_frozen_total.json"])
+    for variant in ("st_frozen", "st_spherical"):
+        d = RESULTS / f"multihorizon_{variant}"
+        check_pricing(d / "summary.json", d / "oos.parquet", REPORTED[d / "summary.json"])
+
+    print("\ntopic-count sweep")
+    for L in SWEEP_L:
+        for arm in SWEEP_ARMS:
+            variant = f"{arm}_L{L}"
+            check_fit(variant, L, vocab_abl, coherence, sweep[variant])
+
+    print("\nL = 80 pricing")
+    d = ABL / "pricing_L80"
+    for variant in ("st_spherical_L80", "lda_L80"):
+        for kind in ("total", "excess"):
+            check_pricing(d / f"summary_{variant}_{kind}.json",
+                          d / f"oos_{variant}_{kind}.parquet",
+                          REPORTED[d / f"summary_{variant}_{kind}.json"])
+            n_sel = len(pd.read_csv(d / f"selection_{variant}_{kind}.csv"))
+            n_active = json.load(open(d / f"summary_{variant}_{kind}.json"))["n_active"]
+            check(n_sel == n_active, f"{variant} {kind}: {n_sel} selected narratives")
+        m = d / f"multihorizon_{variant}"
+        check_pricing(m / "summary.json", m / "oos.parquet", REPORTED[m / "summary.json"])
+
+    print(f"\n{len(failures)} failures")
+    if failures:
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

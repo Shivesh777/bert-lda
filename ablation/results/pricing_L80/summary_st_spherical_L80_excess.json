@@ -1,0 +1,13 @@
+{
+ "variant": "st_spherical_L80",
+ "K": 3,
+ "lam": 2.100312822318546e-05,
+ "return_type": "excess",
+ "n_active": 80,
+ "panel_obs": 95071,
+ "n_months": 102,
+ "is_sharpe": 0.8156566033959881,
+ "oos_sharpe_nf": 0.6411711061993799,
+ "oos_sharpe_ewmkt": 0.7164379857705406,
+ "oos_months": 41
+}

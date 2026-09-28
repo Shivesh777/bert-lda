@@ -1,0 +1,18 @@
+{
+ "L": 80,
+ "assignment_device": "cuda",
+ "cluster_converged": false,
+ "cluster_device": "cuda",
+ "cluster_fingerprint": "7213c37775bb9d9853071756d6075f8fe546c78b4ac6827358718c45051be0e1",
+ "cluster_iterations": 25,
+ "cluster_objective": 0.604165537823296,
+ "cluster_reused": false,
+ "clusterer": "spherical",
+ "ctfidf_sublinear_tf": true,
+ "encoder": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+ "n_chunks": 976698,
+ "seed": 0,
+ "temperature": 0.07,
+ "term_weighting": "soft",
+ "variant": "st_spherical_soft_L80"
+}

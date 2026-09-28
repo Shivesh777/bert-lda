@@ -1,0 +1,155 @@
+{
+ "settings": {
+  "encoder": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+  "temperature": 0.07,
+  "seed": 0,
+  "lda_gibbs_iters": 800,
+  "vocab_size": 15000
+ },
+ "rows": [
+  {
+   "arm": "LDA",
+   "L": 50,
+   "variant": "lda_L50",
+   "npmi_mean": 0.2867028084397316,
+   "npmi_median": 0.28470495343208313,
+   "npmi_sd": 0.11121465888431524,
+   "diversity_top10": 0.736,
+   "lda_ll_per_word": -7.459913996217245,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": null
+  },
+  {
+   "arm": "LDA",
+   "L": 60,
+   "variant": "lda_L60",
+   "npmi_mean": 0.2682864314566056,
+   "npmi_median": 0.24355895817279816,
+   "npmi_sd": 0.11182973198604913,
+   "diversity_top10": 0.6833333333333333,
+   "lda_ll_per_word": -7.427176415542012,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": null
+  },
+  {
+   "arm": "LDA",
+   "L": 70,
+   "variant": "lda_L70",
+   "npmi_mean": 0.29102604113785285,
+   "npmi_median": 0.28825318813323975,
+   "npmi_sd": 0.11941758823443496,
+   "diversity_top10": 0.6385714285714286,
+   "lda_ll_per_word": -7.382918251895176,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": null
+  },
+  {
+   "arm": "LDA",
+   "L": 80,
+   "variant": "lda_L80",
+   "npmi_mean": 0.28237412674352524,
+   "npmi_median": 0.2572474926710129,
+   "npmi_sd": 0.12335480380196816,
+   "diversity_top10": 0.60625,
+   "lda_ll_per_word": -7.366129829900994,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": null
+  },
+  {
+   "arm": "Spherical ST, soft head",
+   "L": 50,
+   "variant": "st_spherical_soft_L50",
+   "npmi_mean": 0.34398470155894756,
+   "npmi_median": 0.3181317001581192,
+   "npmi_sd": 0.21697963152363114,
+   "diversity_top10": 0.448,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": 0.5795396257178524,
+   "cluster_iterations": 23
+  },
+  {
+   "arm": "Spherical ST, soft head",
+   "L": 60,
+   "variant": "st_spherical_soft_L60",
+   "npmi_mean": 0.38895308195302886,
+   "npmi_median": 0.3484339118003845,
+   "npmi_sd": 0.21684166052060222,
+   "diversity_top10": 0.4683333333333333,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": 0.5897812541714212,
+   "cluster_iterations": 23
+  },
+  {
+   "arm": "Spherical ST, soft head",
+   "L": 70,
+   "variant": "st_spherical_soft_L70",
+   "npmi_mean": 0.37910853012331897,
+   "npmi_median": 0.3397243618965149,
+   "npmi_sd": 0.21689363667082082,
+   "diversity_top10": 0.44857142857142857,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": 0.596555766194329,
+   "cluster_iterations": 23
+  },
+  {
+   "arm": "Spherical ST, soft head",
+   "L": 80,
+   "variant": "st_spherical_soft_L80",
+   "npmi_mean": 0.4009121933020651,
+   "npmi_median": 0.3751355707645416,
+   "npmi_sd": 0.22347290172416703,
+   "diversity_top10": 0.47,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": 0.604165537823296,
+   "cluster_iterations": 25
+  },
+  {
+   "arm": "Spherical ST, sparse-soft head",
+   "L": 50,
+   "variant": "st_spherical_L50",
+   "npmi_mean": 0.44140313170850276,
+   "npmi_median": 0.45905809104442596,
+   "npmi_sd": 0.1756978556838893,
+   "diversity_top10": 0.7,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": 0
+  },
+  {
+   "arm": "Spherical ST, sparse-soft head",
+   "L": 60,
+   "variant": "st_spherical_L60",
+   "npmi_mean": 0.4578946214169264,
+   "npmi_median": 0.5239023864269257,
+   "npmi_sd": 0.1997704677851234,
+   "diversity_top10": 0.6783333333333333,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": 0
+  },
+  {
+   "arm": "Spherical ST, sparse-soft head",
+   "L": 70,
+   "variant": "st_spherical_L70",
+   "npmi_mean": 0.46215181584869114,
+   "npmi_median": 0.4544825851917267,
+   "npmi_sd": 0.1917723448256682,
+   "diversity_top10": 0.6685714285714286,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": 0
+  },
+  {
+   "arm": "Spherical ST, sparse-soft head",
+   "L": 80,
+   "variant": "st_spherical_L80",
+   "npmi_mean": 0.4942728454247117,
+   "npmi_median": 0.4780762046575546,
+   "npmi_sd": 0.20179850356067275,
+   "diversity_top10": 0.66625,
+   "lda_ll_per_word": null,
+   "cluster_mean_cosine": null,
+   "cluster_iterations": 0
+  }
+ ]
+}

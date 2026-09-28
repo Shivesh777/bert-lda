@@ -1,0 +1,13 @@
+{
+ "variant": "lda_L80",
+ "K": 3,
+ "lam": 5.271840099118635e-05,
+ "return_type": "excess",
+ "n_active": 78,
+ "panel_obs": 95071,
+ "n_months": 102,
+ "is_sharpe": 0.7452318014418172,
+ "oos_sharpe_nf": 0.6469613881571482,
+ "oos_sharpe_ewmkt": 0.7164379857705406,
+ "oos_months": 41
+}

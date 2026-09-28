@@ -1,0 +1,18 @@
+{
+ "variant": "st_spherical_L80",
+ "return_type": "excess",
+ "K": 3,
+ "halflives": [
+  20,
+  60,
+  120
+ ],
+ "grouped_by_topic": true,
+ "lambda_grid_size": 8,
+ "panel_obs": 95071,
+ "n_features": 240,
+ "topic_clusterer": "spherical",
+ "topic_term_weighting": "sparse_soft",
+ "oos_sharpe_nf": 0.7156221227423412,
+ "oos_months": 41
+}

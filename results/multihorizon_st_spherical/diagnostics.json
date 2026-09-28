@@ -1,0 +1,30 @@
+[
+  {
+    "retrain_month_id": 61,
+    "retrain_month": "2020-09",
+    "lambda": 1.4467196187524074e-06,
+    "active_topics": 60,
+    "is_sharpe": 1.38386407346588
+  },
+  {
+    "retrain_month_id": 73,
+    "retrain_month": "2021-09",
+    "lambda": 1.5251350627119734e-05,
+    "active_topics": 60,
+    "is_sharpe": 1.3910952558794807
+  },
+  {
+    "retrain_month_id": 85,
+    "retrain_month": "2022-09",
+    "lambda": 1.0176731983626199e-06,
+    "active_topics": 60,
+    "is_sharpe": 1.075829841423797
+  },
+  {
+    "retrain_month_id": 97,
+    "retrain_month": "2023-09",
+    "lambda": 1.0282361795547278e-05,
+    "active_topics": 60,
+    "is_sharpe": 1.1940308511778324
+  }
+]

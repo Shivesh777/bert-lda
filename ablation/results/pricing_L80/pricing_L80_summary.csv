@@ -1,0 +1,7 @@
+variant,pricing_stage,returns,K,oos_sharpe_mve,oos_sharpe_ew_market,is_sharpe,n_active_final,oos_months
+st_spherical_L80,single-horizon sparse IPCA,total,3,0.7219,0.8166,0.92,80,41
+lda_L80,single-horizon sparse IPCA,total,3,0.7675,0.8166,0.8262,78,41
+st_spherical_L80,single-horizon sparse IPCA,excess,3,0.6412,0.7164,0.8157,80,41
+lda_L80,single-horizon sparse IPCA,excess,3,0.647,0.7164,0.7452,78,41
+st_spherical_L80,grouped multi-horizon IPCA (20/60/120),excess,3,0.7156,,,,41
+lda_L80,grouped multi-horizon IPCA (20/60/120),excess,3,0.6125,,,,41

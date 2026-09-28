@@ -1,0 +1,8 @@
+{
+ "variant": "lda_L60",
+ "L": 60,
+ "seed": 0,
+ "backend": "tomotopy",
+ "gibbs_iters": 800,
+ "ll_per_word": -7.427176415542012
+}

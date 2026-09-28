@@ -1,0 +1,10 @@
+{
+ "variant": "st_frozen",
+ "L": 60,
+ "encoder": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+ "temperature": 0.07,
+ "seed": 0,
+ "n_chunks": 1183874,
+ "clusterer": "minibatch_kmeans",
+ "term_weighting": "hard"
+}

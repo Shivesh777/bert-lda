@@ -1,0 +1,81 @@
+topic,label,row_norm
+77,fell / index / dropped,0.326693361854808
+3,contract / greeks / expire worthless,0.32466690642628965
+38,contract / expiration / premium,0.18735594917577497
+51,rose / climbed / nyse,0.16039206185806618
+33,rsi / oversold / rsi reading,0.15620166015844236
+15,statements / remarks / conference,0.11221112711547461
+14,dividend / payment / dividend payment,0.10378716020127114
+7,strategy / typically indicates / criteria,0.09861502973942264
+4,think / right / advisor,0.09218194823180963
+40,quote / consensus / ttm,0.09142432674250482
+69,rsi / oversold / rsi reading,0.0882354163251229
+24,intel / chip / chips,0.08641612256230967
+11,moving average / day moving / moving,0.0785124209424548
+76,moving average / day moving / moving,0.0732437002069202
+48,streaming / cable / content,0.07256068584146938
+47,health / healthcare / care,0.0720818582842433
+39,blog / analyst blog / highlights,0.0707017824980648
+27,million / revenues / consensus,0.06933099796970783
+61,contract / yieldboost / premium,0.06748288481217371
+6,jobless claims / jobless / claims,0.06606475114105151
+43,style / value / great,0.06482137920476329
+17,consensus / estimates / analysts,0.06431611926482575
+1,esp / earnings esp / consensus estimate,0.06257517141286248
+13,current consensus / estimate revisions / revisions,0.06234463697359676
+9,million / adjusted / loss,0.06082578530654703
+57,airlines / boeing / air,0.0586903015037184
+55,validea / strategy / typically indicates,0.056335765747793726
+68,statements / remarks / conference,0.055866116155053595
+56,bank / banks / banking,0.05546489631993691
+18,units / new units / just like,0.05502175506299007
+5,time / long / term,0.052094471076872526
+2,analyst target / target price / target,0.05156643230610022
+42,cloud / software / microsoft,0.05017006956391747
+12,dividend / yield / dividends,0.04877595420307066
+44,court / lawsuit / thomsonreuters,0.04819964373445555
+65,movers / performing / day best,0.04767479137450581
+35,volume / contracts / representing approximately,0.043575037214806614
+60,debt / risk / ebit,0.04318227892518125
+37,buffett / berkshire / warren buffett,0.042475503710862395
+0,typically indicates / strategy / criteria,0.041911234032235366
+72,patients / treatment / drug,0.0396990420619832
+74,health care / care / health,0.039497775910607026
+28,investorplace / advice trading / trading tips,0.03877823854110698
+20,dividend / payment / dividend payment,0.03732493496157197
+21,sector / laggards / sector laggards,0.03694857466629203
+64,kwhen / lags / comparative performance,0.03565794037546503
+26,dividend / payment / dividend payment,0.035500723823866244
+16,dow / dow jones / jones,0.03530937869586764
+59,tech / technology / revenue,0.03135527686722689
+31,validea / guru / pass,0.028647762995897105
+54,etf / big etf / units,0.02807809062078565
+49,etf / etfs / fund,0.027939496716537764
+78,target / representing ownership / price target,0.026556532645608092
+8,biotech / drug / drugs,0.02653234105261302
+67,officer / chief / president,0.025779982770841092
+79,estimate / revisions / estimate revisions,0.02523696478871962
+58,dividend / quarterly dividend / quarterly,0.02508487575047759
+62,oil / crude / gas,0.024816317594735966
+30,current mean / mean recommendation / buy range,0.024782761119260376
+25,earnings report / consensus estimate / estimate,0.02210709961713129
+63,disney / walt / walt disney,0.020982029757189737
+41,gold / silver / ounce,0.020979932569808245
+66,analyst target / target price / target,0.020589607698531333
+36,quarterly dividend / dividends / dividend,0.01877583714100555
+70,kwhen / lags / peer,0.017807881655988227
+22,units / big etf / outstanding,0.01640539543929127
+19,energy / energy sector / natural gas,0.016205477499584734
+32,walmart / stores / amazon,0.01609638001956154
+23,dividend / payment / dividend date,0.015759569728472325
+71,fed / inflation / rate,0.014204363750641373
+75,cannabis / marijuana / canopy,0.01298068959918319
+34,vaccine / covid / vaccines,0.01185270580749598
+45,revenues / estimate / consensus,0.01107267641916321
+53,insider / insiders / transactions,0.009208920842896852
+50,tesla / vehicles / vehicle,0.006940512797172345
+73,solar / energy / power,0.006505599603314152
+52,rank / free / estimate,0.0062677096152382785
+29,validea / guru / pass,0.005264479307923707
+10,representing ownership / prior filing / reported owning,0.004417832880204195
+46,revenue / like / composite,0.0036998324123719228

@@ -1,0 +1,61 @@
+topic,label,group_norm
+39,rsi / oversold / rsi reading,0.6237406567179707
+23,contract / options / premium,0.546252606852897
+59,estimate / consensus / revenues,0.532777351090968
+0,units / etfs / outstanding,0.43813931842167725
+54,options / rate return / bid,0.408808388177174
+15,hours / extended hours / extended,0.40356197798687904
+24,investorplace / market news / trading tips,0.37841222389296314
+47,industry / value / sales,0.35423706011259964
+11,sector / date / select sector,0.35408765093550804
+3,consensus / industry / consensus earnings,0.35173547459670573
+46,rttnews / laggards / etftrends,0.34712235648174744
+18,units / etfs / day moving,0.3402588188593695
+12,sector / rose / rank,0.3308979218099092
+36,fell / lags / index,0.32633538868305795
+49,streaming / netflix / cable,0.32245348868310564
+5,dividend / yield / dividends,0.2966144014352369
+37,dividend / payment / dividend payment,0.28745295794177994
+8,strategy / pass / table,0.2830826229187633
+4,oil / gas / energy,0.27915378182600575
+48,estimate / consensus / esp,0.27690969596568993
+21,etf / etfs / fund,0.2564947882550236
+34,tesla / intel / solar,0.2514617311717572
+50,volume / contracts / approximately,0.24418324217892806
+26,billion / million / deal,0.24025128306377194
+19,patients / vaccine / drug,0.22237964987821496
+43,advisor / right / better,0.22105044340607308
+55,cannabis / marijuana / aurora,0.2170822080633671
+2,target / analyst target / analyst,0.2131929734901517
+13,purchase / traded / holdings,0.2124273249270206
+27,conference / dial / live webcast,0.21196466898237443
+35,million / revenues / billion,0.2119595672415192
+38,sales / million / revenue,0.20994965506247873
+9,moving average / day moving / moving,0.20920262174680354
+33,silver / gold / dollar,0.20418827089548375
+22,preferred / prb / cumulative,0.2020869527213994
+45,chief / ceo / president,0.19297376606768332
+10,travel / short / attacks,0.18348358290851724
+41,strategy / pass / based,0.18205378927880736
+20,disney / airlines / stores,0.17897541125336205
+31,validea / pass / strategy,0.1724238053601384
+30,options / annualized rate / annualized,0.16733993461752325
+29,gold / fed / dollar,0.1630481034815311
+28,value / ratio / nyse,0.1621054713909869
+53,dividend / dividends / symbol,0.1431922511436206
+58,statements / conference / remarks,0.13925660100535533
+7,volume / contracts / approximately,0.12379384936364139
+6,bank / debt / banks,0.11876670067090171
+16,revenue / billion / like,0.11844246573469033
+14,cloud / amazon / google,0.11426316946390304
+56,insider / insiders / transactions,0.11024955555601644
+25,dow / traded / buzz,0.10889054624962043
+51,million / roku / apple,0.10641084509015444
+17,million / revenues / estimate,0.10623055660498391
+40,blog / think / analyst blog,0.09781643235693722
+32,insiders / insider / term,0.08981689660132104
+52,drug / biotech / drugs,0.0889470915593736
+57,representing / target / firm,0.08468870422221189
+1,research / highlights / free,0.06644863869294809
+44,rank / value / style,0.06553240547581156
+42,roe / equity / capital,0.06499123459368848

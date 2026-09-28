@@ -1,0 +1,6 @@
+{
+ "variant": "lda",
+ "L": 60,
+ "seed": 0,
+ "backend": "tomotopy"
+}
