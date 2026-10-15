@@ -214,5 +214,19 @@ and the L = 80 pricing runs behind Appendix B.
 
 ## Citation
 
-Foley, K., Hartadi, J., Prakash, S. and Vatsal, S. (2026). From Word Counts
-to Context: Topic Models for Asset Pricing. Working paper.
+```bibtex
+@article{foley2026wordcountscontexttopic,
+  title        = {From Word Counts to Context: Topic Models for Asset Pricing},
+  author       = {Foley, Kevin and Hartadi, Jonathan and Prakash, Shivesh and Vatsal, Swapnil},
+  year         = {2026},
+  month        = {9},
+  eprint       = {2609.34169},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.CE},
+  doi          = {10.2139/ssrn.7534559},
+  url          = {https://arxiv.org/abs/2609.34169},
+  note         = {Available at SSRN: \url{https://ssrn.com/abstract=7534559}}
+}
+```
+
+Also available on SSRN: [abstract 7534559](https://ssrn.com/abstract=7534559).
